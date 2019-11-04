@@ -78,3 +78,6 @@
 招聘组长用户名：`xuxianliang` 密码：`123456`
 招聘专员用户名：`caiyuqing` 密码：`123456`
 
+### 欢迎赞赏
+![赞赏](https://github.com/zhupanlinch/pay/blob/master/src/main/resources/static/common/%E8%B5%9E%E8%B5%8F%E7%A0%81.png)
+
