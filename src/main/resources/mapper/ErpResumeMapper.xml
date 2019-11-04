@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mysiteforme.admin.dao.ErpResumeDao" >
+
+    <select id="selectResumeTagIds" resultType="java.lang.Long" parameterType="java.lang.Long">
+        select tag_id as "tagId" from erp_resume_tag where resume_id = #{resumeId}
+    </select>
+
+    <select id="saveResumeTag">
+        insert into erp_resume_tag(resume_id,tag_id)
+        values
+        <foreach collection="resumeTag" item="item" index="index" separator="," >
+            (#{resumeId},#{item.id})
+        </foreach>
+    </select>
+
+    <delete id="dropResumeTag" parameterType="java.lang.Long">
+        delete from erp_resume_tag where resume_id = #{resumeId}
+    </delete>
+
+    <select id="selectResumeProjectIds" resultType="java.lang.Long" parameterType="java.lang.Long">
+        select project_id as "projectId" from erp_resume_project where resume_id = #{resumeId}
+    </select>
+
+    <select id="saveResumeProject">
+        insert into erp_resume_project(resume_id,project_id)
+        values
+        <foreach collection="resumeProject" item="item" index="index" separator="," >
+            (#{resumeId},#{item.id})
+        </foreach>
+    </select>
+
+    <delete id="dropResumeProject" parameterType="java.lang.Long">
+        delete from erp_resume_project where resume_id = #{resumeId}
+    </delete>
+
+</mapper>

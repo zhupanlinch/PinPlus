@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/mysiteforme/admin/controller" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/mysiteforme/admin/dao" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/mysiteforme/admin/entity" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/mysiteforme/admin/service" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/images/chun.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/images/dong.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/images/qiu.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/images/xia.jpg" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/images/企业员工管理.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/images/招聘专员.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/images/招聘组长.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/images/标签管理.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/images/简历管理.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/images/角色管理.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/static/images/项目管理.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/templates/admin/erpUserResume" charset="GBK" />
+  </component>
+</project>
