@@ -33,7 +33,7 @@
 ### 系统登录
 ![](/src/main/resources/static/images/%E7%99%BB%E5%BD%95%E9%A1%B5.png)
 ### 角色管理
-![](/src/main/resources/static/images/角色管理.png)
+![](https://github.com/zhupanlinch/PinPlus/blob/master/src/main/resources/static/images/%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86.png/角色管理.png)
 ### 企业员工管理
 ![](/src/main/resources/static/images/企业员工管理.png)
 ### 标签管理
