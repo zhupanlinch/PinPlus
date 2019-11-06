@@ -61,6 +61,15 @@
                 });
                 tpwidget("show");</script>
             </div>
+            <!-- 网站描述 -->
+            <div class="" style="color: #fff;
+    float: left;
+    line-height: 60px;
+    font-size: 25px;
+    padding: 0 25px;
+    text-align: center;">
+                <div>${site.description}</div>
+            </div>
             <!-- 顶部右侧菜单 -->
             <ul class="layui-nav top_menu">
                 <#--<li class="layui-nav-item showNotice" id="showNotice" pc>-->
@@ -93,7 +102,8 @@
     <!-- 左侧导航 -->
     <div class="layui-side layui-bg-black">
         <div class="user-photo">
-            <a class="img" title="我的头像" ><img src="<#if (currentUser.icon??)>${currentUser.icon}<#else>${base}/static/images/face.jpg</#if>"></a>
+            <#--<a class="img" title="我的头像" ><img src="<#if (currentUser.icon??)>${currentUser.icon}<#else>${base}/static/images/face.jpg</#if>"></a>-->
+            <a class="img" title="我的头像" ><img src="${site.logo}"></a>
             <p>你好！<span class="userName"><#if currentUser.nickName!''>${currentUser.nickName}<#else>${currentUser.loginName}</#if></span>, 欢迎登录</p>
         </div>
         <div class="navBar layui-side-scroll"></div>

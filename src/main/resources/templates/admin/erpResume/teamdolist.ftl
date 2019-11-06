@@ -188,6 +188,7 @@
                 // {field:'createDate',  title: '创建时间',width:'15%',templet:'<div>{{ layui.laytpl.toDateString(d.createDate) }}</div>',unresize: true}, //单元格内容水平居中
                 {field:'remarks', title: '成交项目'},
                 {field:'updateUserNickName', title: '成交专员'},
+                {field:'updateDate',  title: '更新时间',templet:'<div>{{ layui.laytpl.toDateString(d.updateDate,"yyyy-MM-dd") }}</div>',unresize: true},
                 // {fixed: 'right', title:'操作',  width: '15%', align: 'center',toolbar: '#barDemo'}
             ]]
         };

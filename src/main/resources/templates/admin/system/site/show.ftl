@@ -234,7 +234,7 @@
             elem: '#test1',
             url: '${base}/file/upload',
             accept:'images',
-            exts:'ico',
+            // exts:'ico',
             field:'test',
             before: function(obj){
                 //预读本地文件示例，不支持ie8

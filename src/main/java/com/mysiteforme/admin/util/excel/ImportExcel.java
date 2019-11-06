@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -184,6 +185,12 @@ public class ImportExcel {
 			if (cell != null){
 				if (cell.getCellType() == Cell.CELL_TYPE_NUMERIC){
 					val = cell.getNumericCellValue();
+					String s = String.valueOf(val);
+					// 解决科学计数法的数字
+					if(s.contains("E") || s.contains("e")){
+						BigDecimal bd = new BigDecimal(Double.parseDouble(s));
+						val = bd.toString();
+					}
 				}else if (cell.getCellType() == Cell.CELL_TYPE_STRING){
 					val = cell.getStringCellValue();
 				}else if (cell.getCellType() == Cell.CELL_TYPE_FORMULA){

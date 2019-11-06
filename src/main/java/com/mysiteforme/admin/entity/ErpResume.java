@@ -332,6 +332,7 @@ public class ErpResume extends DataEntity<ErpResume> {
 			", projectId=" + projectId +
 			// ", updateUser=" + updateUser +
 			", updateUserNickName=" + updateUser.getNickName() +
+			", updateDate=" + updateDate +
 			"}";
 	}
 }

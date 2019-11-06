@@ -2,11 +2,10 @@ package com.mysiteforme.admin.controller;
 
 import com.google.common.collect.Lists;
 import com.mysiteforme.admin.base.BaseController;
-import com.mysiteforme.admin.entity.ErpProject;
-import com.mysiteforme.admin.entity.ErpTag;
-import com.mysiteforme.admin.entity.User;
+import com.mysiteforme.admin.entity.*;
 import com.mysiteforme.admin.service.ErpProjectService;
 import com.mysiteforme.admin.service.ErpTagService;
+import com.mysiteforme.admin.service.ErpTeamMemberService;
 import com.mysiteforme.admin.util.excel.ExportExcel;
 import com.mysiteforme.admin.util.excel.ImportExcel;
 import com.xiaoleilu.hutool.date.DateUtil;
@@ -15,7 +14,6 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.mysiteforme.admin.entity.ErpResume;
 import com.mysiteforme.admin.service.ErpResumeService;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.mysiteforme.admin.util.LayerData;
@@ -63,7 +61,10 @@ public class ErpResumeController extends BaseController {
     @Autowired
     private ErpProjectService erpProjectService;
 
-    @GetMapping({"list", "my", "mydo", "teamdo", "alldo"})
+    @Autowired
+    private ErpTeamMemberService erpTeamMemberService;
+
+    @GetMapping({"list", "my", "mydo", "teamdo", "alldo", "managedo"})
     @SysLog("跳转简历表列表")
     public String list(HttpServletRequest request){
         String uri = request.getRequestURI();
@@ -75,6 +76,9 @@ public class ErpResumeController extends BaseController {
         }
         if(uri.contains("teamdo")){
             return "/admin/erpResume/teamdolist";  //小组成交简历
+        }
+        if(uri.contains("managedo")){
+            return "/admin/erpResume/managedolist";  //小组成交简历
         }
         if(uri.contains("alldo")){
             return "/admin/erpResume/alldolist";  //所有成交简历
@@ -204,7 +208,7 @@ public class ErpResumeController extends BaseController {
 
     @PostMapping({"teamdo"})
     @ResponseBody
-    @SysLog("我的小组的成交列表数据")
+    @SysLog("项目小组的成交列表数据")
     public LayerData<ErpResume> teamdo(@RequestParam(value = "page",defaultValue = "1")Integer page,
                                      @RequestParam(value = "limit",defaultValue = "10")Integer limit,
                                      HttpServletRequest request){
@@ -225,7 +229,7 @@ public class ErpResumeController extends BaseController {
         }
         EntityWrapper<ErpProject> projectWrapper = new EntityWrapper<ErpProject>();
         projectWrapper.eq("del_flag",false);
-        projectWrapper.exists("select 1 from erp_project_user where project_id = erp_project.id and user_id= "+getCurrentUser().getId()+" ");
+        projectWrapper.eq("leader_id", getCurrentUser().getId());
         List<ErpProject> projects = erpProjectService.selectList(projectWrapper); // 我的项目
         String [] projecctIds = new String[projects.size()];
         int i = 0;
@@ -238,6 +242,58 @@ public class ErpResumeController extends BaseController {
             uProjecctIdsStr = "";
         }
         wrapper.in("project_id", uProjecctIdsStr);
+
+        Page<ErpResume> pageData = erpResumeService.selectPage(new Page<>(page,limit),wrapper);
+        for(ErpResume r: pageData.getRecords()){
+            if(r.getProjectId()!=null && r.getProjectId()!=0){
+                ErpProject p = erpProjectService.selectById(r.getProjectId());
+                r.setRemarks(p.getName());
+
+            }
+            User u = userService.selectById(r.getUpdateId());
+            r.setUpdateUser(u);
+        }
+        layerData.setData(pageData.getRecords());
+        layerData.setCount(pageData.getTotal());
+        return layerData;
+    }
+
+    @PostMapping({"managedo"})
+    @ResponseBody
+    @SysLog("管理小组的成交列表数据")
+    public LayerData<ErpResume> managedo(@RequestParam(value = "page",defaultValue = "1")Integer page,
+                                       @RequestParam(value = "limit",defaultValue = "10")Integer limit,
+                                       HttpServletRequest request){
+        Map map = WebUtils.getParametersStartingWith(request, "s_");
+        LayerData<ErpResume> layerData = new LayerData<>();
+        EntityWrapper<ErpResume> wrapper = new EntityWrapper<>();
+        wrapper.eq("del_flag",false);
+        wrapper.gt("job_status", 1);  // 成交的简历
+        String uri = request.getRequestURI();
+        if(!map.isEmpty()){
+            String name = (String) map.get("name");
+            if(StringUtils.isNotBlank(name)) {
+                wrapper.like("name",name);
+            }else{
+                map.remove("name");
+            }
+
+        }
+        EntityWrapper<ErpTeamMember> tmWrapper = new EntityWrapper<ErpTeamMember>();
+        tmWrapper.eq("del_flag",false);
+        tmWrapper.eq("create_by", getCurrentUser().getId());
+        List<ErpTeamMember> tms = erpTeamMemberService.selectList(tmWrapper); // 我的管理小组的组员IDS集合
+        String [] updateByIds = new String[tms.size()];
+        int i = 0;
+        for(ErpTeamMember tm: tms) {
+            updateByIds[i++] = tm.getUserId().toString();
+        }
+
+        String updateByIdsStr = StringUtils.join(updateByIds, ",");
+        if(tms.size()==0){
+            updateByIdsStr = "";
+        }
+        wrapper.in("update_by", updateByIdsStr);
 
         Page<ErpResume> pageData = erpResumeService.selectPage(new Page<>(page,limit),wrapper);
         for(ErpResume r: pageData.getRecords()){

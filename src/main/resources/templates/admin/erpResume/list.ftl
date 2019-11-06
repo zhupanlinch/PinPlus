@@ -260,6 +260,7 @@
                 // {field:'school', title: '学校'},
                 // {field:'major', title: '专业'},
                 {field:'downDate',  title: '下载日期',templet:'<div>{{ layui.laytpl.toDateString(d.downDate,"yyyy-MM-dd") }}</div>',unresize: true},
+                {field:'updateDate',  title: '更新时间',templet:'<div>{{ layui.laytpl.toDateString(d.updateDate,"yyyy-MM-dd") }}</div>',unresize: true},
                 // {field:'delFlag',    title: '简历表状态',width:'12%',templet:'#userStatus'},
                 // {field:'createDate',  title: '创建时间',width:'15%',templet:'<div>{{ layui.laytpl.toDateString(d.createDate) }}</div>',unresize: true}, //单元格内容水平居中
                 {fixed: 'right', title:'操作',  width: '15%', align: 'center',toolbar: '#barDemo'}

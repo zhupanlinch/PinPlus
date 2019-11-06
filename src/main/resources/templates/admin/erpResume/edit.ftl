@@ -227,6 +227,13 @@
         </div>
     </div>
     <div class="layui-form-item">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+
+            <textarea name="remarks"  placeholder="请输入备注" class="layui-textarea">${erpResume.remarks}</textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
         <div class="layui-input-block">
             <button class="layui-btn" lay-submit="" lay-filter="addErpResume">立即提交</button>
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>

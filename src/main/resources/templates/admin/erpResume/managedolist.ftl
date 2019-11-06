@@ -152,7 +152,7 @@
 
         var t = {
             elem: '#myErpResumeList',
-            url:'${base}/admin/erpResume/alldo',
+            url:'${base}/admin/erpResume/managedo',
             method:'post',
             page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
                 layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'], //自定义分页布局
