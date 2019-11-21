@@ -37,21 +37,21 @@
 * 富文本：<a href="http://www.wangeditor.com/" target="_blank">wangEditor</a>
 
 ### 系统登录
-![](/src/main/resources/static/images/%E7%99%BB%E5%BD%95%E9%A1%B5.png)
+![](https://github.com/zhupanlinch/PinPlus/blob/master/src/main/resources/static/images/%E7%99%BB%E5%BD%95%E9%A1%B5.png)
 ### 角色管理
-![](https://github.com/zhupanlinch/PinPlus/blob/master/src/main/resources/static/images/角色管理.png)
+![](https://github.com/zhupanlinch/PinPlus/blob/master/src/main/resources/static/images/%E8%A7%92%E8%89%B2%E7%AE%A1%E7%90%86.png)
 ### 企业员工管理
-![](/src/main/resources/static/images/企业员工管理.png)
+![](https://github.com/zhupanlinch/PinPlus/blob/master/src/main/resources/static/images/%E4%BC%81%E4%B8%9A%E5%91%98%E5%B7%A5%E7%AE%A1%E7%90%86.png)
 ### 标签管理
-![](/src/main/resources/static/images/标签管理.png)
+![](https://github.com/zhupanlinch/PinPlus/blob/master/src/main/resources/static/images/%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86.png)
 ### 项目管理
-![](/src/main/resources/static/images/项目管理.png)
+![](https://github.com/zhupanlinch/PinPlus/blob/master/src/main/resources/static/images/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86.png)
 ### 简历管理
-![](/src/main/resources/static/images/简历管理.png)
+![](https://github.com/zhupanlinch/PinPlus/blob/master/src/main/resources/static/images/%E7%AE%80%E5%8E%86%E7%AE%A1%E7%90%86.png)
 ### 招聘专员
-![](/src/main/resources/static/images/招聘专员.png)
+![](https://github.com/zhupanlinch/PinPlus/blob/master/src/main/resources/static/images/%E6%8B%9B%E8%81%98%E4%B8%93%E5%91%98.png)
 ### 招聘组长
-![](/src/main/resources/static/images/招聘组长.png)
+![](https://github.com/zhupanlinch/PinPlus/blob/master/src/main/resources/static/images/%E6%8B%9B%E8%81%98%E7%BB%84%E9%95%BF.png)
 
 ### 开发环境
 建议开发者使用以下环境，这样避免版本带来的问题
