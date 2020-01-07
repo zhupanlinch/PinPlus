@@ -67,16 +67,16 @@
 
 # 快速体验
 * 将源码导入IDE 
-* 将源码路径下的src/main/resources/sql 中的mysiteforme.sql导入到数据库中(qrtz.sql为定时任务的几张jibenbiao mysiteforme.sql已经包含)
+* 将源码路径下的src/main/resources/sql 中的PinPlus.sql导入到数据库中(qrtz.sql为定时任务的几张基本表 PinPlus.sql已经包含)
 * 将src\main\resources目录下的application.yml配置文件里的mysql用户名密码改成你本地的
 * 安装redis数据库 默认数据库密码为空(注*** 必须安装redis 否则本系统会报错)
 * redis的window版本有些地方下载可以下不下来,可以到这里下载`https://pan.baidu.com/s/1dG22JQT`  
 * 注册redis系统服务 打开cmd--->切换到安装redis的目录--->`redis-server.exe --service-install redis.windows-service.conf`
 * 启动系统 预览地址为:`http://localhost:8080`  
-系统管理员用户名：`admin` 密码：`123456`
-管理员用户名：`liubei` 密码：`123456`
-招聘组长用户名：`xuxianliang` 密码：`123456`
-招聘专员用户名：`caiyuqing` 密码：`123456`
+* 系统管理员用户名：`admin` 密码：`123456`
+* 管理员用户名：`liubei` 密码：`123456`
+* 招聘组长用户名：`xuxianliang` 密码：`123456`
+* 招聘专员用户名：`caiyuqing` 密码：`123456`
 
 ### 欢迎赞赏
 ![赞赏](https://github.com/zhupanlinch/pay/blob/master/src/main/resources/static/common/%E8%B5%9E%E8%B5%8F%E7%A0%81.png)
