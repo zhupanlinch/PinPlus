@@ -35,7 +35,7 @@
 		<druid.version>1.1.9</druid.version>
 		<guava.version>17.0</guava.version>
 		<quartz.version>2.3.0</quartz.version>
-		<poi.version>3.9</poi.version>
+		<poi.version>4.1.2</poi.version>
 	</properties>
 
 	<repositories>
